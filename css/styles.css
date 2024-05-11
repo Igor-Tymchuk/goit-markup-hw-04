@@ -2,7 +2,6 @@ body {
   font-family: Roboto, sans-serif;
   font-weight: 400;
   color: #434455;
-  width: 1440px;
   background-color: #ffffff;
 }
 
@@ -36,13 +35,13 @@ img {
 }
 
 .container {
-  display: inline-flex;
+  display: flex;
   justify-content: space-between;
   width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: 141px;
-  margin-right: 141px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .list {
@@ -280,17 +279,13 @@ img {
   width: 1158px;
   padding-left: 15px;
   padding-right: 15px;
-  margin-left: 141px;
-  margin-right: 141px;
+  margin-left: auto;
+  margin-right: auto;
 
 }
 
 .teammate {
   border-radius: 0 0 4px 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
   width: calc((100% - 72px) /4);
   background: #fff;
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08), 0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
@@ -331,10 +326,6 @@ img {
 .portfolio-name {}
 
 .port-border {
-  display: flex;
-  align-items: flex-start;
-  justify-content: center;
-  flex-direction: column;
   border: 1px solid #e7e9fc;
   border-top: none;
   padding: 32px 16px;
