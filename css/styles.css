@@ -31,7 +31,7 @@ img {
 }
 
 .nav-header.current::after {
-  content: '';
+  content: "";
   position: absolute;
   left: 0;
   bottom: -1px;
@@ -39,8 +39,8 @@ img {
   width: 100%;
   height: 4px;
   border-radius: 2px;
-  background-color: #404BBF;
-  }
+  background-color: #404bbf;
+}
 
 .top {
   border-bottom: 1px solid #e7e9fc;
@@ -48,6 +48,8 @@ img {
   align-items: flex-start;
   justify-content: space-between;
   flex-direction: row;
+  box-shadow: 0px 2px 1px rgba(46, 47, 66, 0.08),
+    0px 1px 1px rgba(46, 47, 66, 0.16), 0px 1px 6px rgba(46, 47, 66, 0.08);
 }
 
 .container {
@@ -60,6 +62,9 @@ img {
   margin-right: auto;
 }
 
+.soc-list {
+  list-style: none;
+}
 .list {
   list-style: none;
   display: flex;
@@ -105,6 +110,7 @@ img {
   color: #2e2f42;
   text-decoration: none;
   padding: 24px 0;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .nav-header:hover,
@@ -129,6 +135,7 @@ img {
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #434455;
+  transition: color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .address-type:hover,
@@ -203,41 +210,49 @@ img {
   max-width: 1440px;
   margin: 0 auto;
   background-repeat: no-repeat;
-  background-size: contain;
+  background-size: cover;
   background-position: center;
 }
 
 .icon-border {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 112px;
+  width: 100%;
   border: 1px solid #8e8f99;
   border-radius: 4px;
   background: #f4f4fd;
-  padding: 24px 100px;
   margin-bottom: 8px;
 }
 
-.social-icons-box {
+.soc-list {
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: row;
   gap: 24px;
 }
-.social {
+
+.social-item {
   width: 40px;
   height: 40px;
+}
+
+.social {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
   border-radius: 50%;
   background-color: #4d5ae5;
   position: relative;
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.team-border .social-icons-box .social:hover,
-.team-border .social-icons-box .social:focus {
-  background-color: #31d0aa;
-}
-
-.team-border .social-icons-box .social:hover .social-icon,
-.team-border .social-icons-box .social:focus .social-icon {
+.team-border .social:hover .social-icon,
+.team-border .social:focus .social-icon {
   transform: translate(-50%, -50%) scale(1.5);
 }
 
@@ -328,6 +343,7 @@ img {
   min-width: 169px;
   height: 56px;
   cursor: pointer;
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 .order-service:hover,
@@ -355,6 +371,7 @@ img {
   box-shadow: 0 2px 1px 0 rgba(46, 47, 66, 0.08),
     0 1px 1px 0 rgba(46, 47, 66, 0.16), 0 1px 6px 0 rgba(46, 47, 66, 0.08);
 }
+
 .teammate:hover .social,
 .teammate:focus .social {
   background-color: #404bbf;
@@ -389,35 +406,33 @@ img {
 
 .portfolio-list {
   width: calc((100% - 48px) / 3);
-  transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 .port-img {
   position: relative;
   overflow: hidden;
 }
 
-.overlay {
+.port-img p {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: #4d5ae5;
-  transform: translateY(100%);
-  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
-}
-.overlay p {
+  padding: 40px 32px;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
   letter-spacing: 0.02em;
   color: #f4f4fd;
-  margin: 40px 32px auto 32px;
+  background-color: #4d5ae5;
+  transform: translateY(100%);
+  transition: transform 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.portfolio-list:hover .overlay,
-.portfolio-list:focus .overlay {
-  transform: translateX(0);
+.portfolio-list:hover .port-img p,
+.portfolio-list:focus .port-img p {
+  transform: translateY(0%);
 }
 .portfolio-list:hover,
 .portfolio-list:focus {
@@ -459,7 +474,13 @@ img {
 }
 .footer-social .description-footer {
   margin-bottom: 16px;
+  font-weight: 500;
+  color: #ffffff;
 }
-.footer-social .social-icons-box {
+.bottom .social-item .social:hover,
+.bottom .social-item .social:focus {
+  background-color: #31d0aa;
+}
+.footer-social .soc-list {
   gap: 16px;
 }
