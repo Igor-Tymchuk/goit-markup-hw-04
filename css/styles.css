@@ -454,13 +454,13 @@ img {
 .bottom,
 .bottom .container {
   display: flex;
+  align-items: baseline;
   justify-content: flex-start;
   background: #2e2f42;
 }
 
 .bottom {
   display: flex;
-  align-items: baseline;
   padding: 100px 0;
 }
 
